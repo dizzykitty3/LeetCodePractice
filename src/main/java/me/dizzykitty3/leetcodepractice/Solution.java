@@ -34,4 +34,46 @@ public class Solution {
         reversed += temp;
         return reversed == x;
     }
+
+    /**
+     * 13. Roman to Integer
+     * <p>
+     * [Easy] #HashTable #Math #String
+     */
+    public int romanToInt(String s) {
+        final int length = s.length();
+
+        int result = 0;
+        int currentValue;
+        int nextValue;
+
+        for (int i = 0; i < length; i++) {
+            currentValue = toInt(s.charAt(i));
+
+            if (i + 1 >= length) nextValue = 0;
+            else nextValue = toInt(s.charAt(i + 1));
+
+            if (currentValue < nextValue) {
+                result += (nextValue - currentValue);
+                i++;
+            } else {
+                result += currentValue;
+            }
+        }
+
+        return result;
+    }
+
+    private static int toInt(char c) {
+        return switch (c) {
+            case 'I' -> 1;
+            case 'V' -> 5;
+            case 'X' -> 10;
+            case 'L' -> 50;
+            case 'C' -> 100;
+            case 'D' -> 500;
+            case 'M' -> 1_000;
+            default -> 0;
+        };
+    }
 }

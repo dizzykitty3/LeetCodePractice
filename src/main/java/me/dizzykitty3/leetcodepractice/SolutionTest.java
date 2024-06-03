@@ -33,4 +33,11 @@ public class SolutionTest {
         assertTrue(solution.isPalindrome(666));
         assertTrue(solution.isPalindrome(0));
     }
+
+    @Test
+    void testRomanToInt() {
+        assertEquals(solution.romanToInt("III"), 3);
+        assertEquals(solution.romanToInt("LVIII"), 58);
+        assertEquals(solution.romanToInt("MCMXCIV"), 1994);
+    }
 }
