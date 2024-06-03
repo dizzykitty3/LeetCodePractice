@@ -1,6 +1,7 @@
 package me.dizzykitty3.leetcodepractice;
 
 import java.util.Objects;
+import java.util.Stack;
 
 public class Solution {
     /**
@@ -120,5 +121,33 @@ public class Solution {
         }
 
         return longestLength;
+    }
+
+    /**
+     * 20. Valid Parentheses
+     * <p>
+     * [Easy] #String #Stack
+     */
+    public boolean isValid(String s) {
+        if (Objects.isNull(s) || s.length() % 2 != 0) return false;
+
+        Stack<String> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            char currentChar = s.charAt(i);
+
+            if (!stack.isEmpty()) {
+                String topChar = stack.peek();
+                if ((currentChar == ')' && Objects.equals(topChar, "("))
+                        || (currentChar == ']' && Objects.equals(topChar, "["))
+                        || (currentChar == '}' && Objects.equals(topChar, "{"))) {
+                    stack.pop();
+                } else {
+                    stack.push(String.valueOf(s.charAt(i)));
+                }
+            } else {
+                stack.push(String.valueOf(currentChar));
+            }
+        }
+        return stack.isEmpty();
     }
 }

@@ -46,4 +46,11 @@ public class SolutionTest {
         assertEquals(solution.longestCommonPrefix(new String[]{"flower", "flow", "flight"}), "fl");
         assertEquals(solution.longestCommonPrefix(new String[]{"dog", "racecar", "car"}), "");
     }
+
+    @Test
+    void testIsValid() {
+        assertTrue(solution.isValid("()"));
+        assertTrue(solution.isValid("()[]{}"));
+        assertFalse(solution.isValid("(]"));
+    }
 }
