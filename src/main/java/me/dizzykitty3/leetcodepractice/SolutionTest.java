@@ -40,4 +40,10 @@ public class SolutionTest {
         assertEquals(solution.romanToInt("LVIII"), 58);
         assertEquals(solution.romanToInt("MCMXCIV"), 1994);
     }
+
+    @Test
+    void testLongestCommonPrefix() {
+        assertEquals(solution.longestCommonPrefix(new String[]{"flower", "flow", "flight"}), "fl");
+        assertEquals(solution.longestCommonPrefix(new String[]{"dog", "racecar", "car"}), "");
+    }
 }

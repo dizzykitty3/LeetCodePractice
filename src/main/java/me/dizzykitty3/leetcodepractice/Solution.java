@@ -1,5 +1,7 @@
 package me.dizzykitty3.leetcodepractice;
 
+import java.util.Objects;
+
 public class Solution {
     /**
      * 1. Two Sum
@@ -75,5 +77,48 @@ public class Solution {
             case 'M' -> 1_000;
             default -> 0;
         };
+    }
+
+    /**
+     * 14. Longest Common Prefix
+     * <p>
+     * [Easy] #String #Trie
+     */
+    public String longestCommonPrefix(String[] strs) {
+        if (Objects.isNull(strs) || strs.length == 0) return "";
+
+        if (strs.length == 1) return strs[0];
+
+        int mLongestLength = longestLength(strs);
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < mLongestLength; i++) {
+            char temp = 0;
+            for (int i1 = 0; i1 < strs.length; i1++) {
+                if (strs[i1].length() <= i) return builder.toString();
+
+                if (0 == i1) {
+                    temp = strs[i1].charAt(i);
+                } else {
+                    if (temp != strs[i1].charAt(i)) return builder.toString();
+                }
+            }
+            builder.append(temp);
+        }
+        return builder.toString();
+    }
+
+    private static int longestLength(String[] strs) {
+        if (Objects.isNull(strs) || strs.length == 0) return 0;
+        if (strs.length == 1) return strs[0].length();
+
+        int longestLength = 0;
+
+        for (int i = 0; i < strs.length; i++) {
+            int currentLength = strs[i].length();
+            if (currentLength > longestLength) longestLength = currentLength;
+        }
+
+        return longestLength;
     }
 }
