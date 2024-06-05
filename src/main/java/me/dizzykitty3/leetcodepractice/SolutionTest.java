@@ -127,4 +127,13 @@ public class SolutionTest {
         assertEquals(solution.strStr("123", "123"), 0);
         assertEquals(solution.strStr("456123", "123"), 3);
     }
+
+    @Test
+    void testSearchInsert() {
+        assertEquals(solution.searchInsert(new int[]{1, 3, 5, 6}, 2), 1);
+        assertEquals(solution.searchInsert(new int[]{1, 3, 5, 6}, 5), 2);
+        assertEquals(solution.searchInsert(new int[]{1, 3, 5, 6}, 7), 4);
+        assertEquals(solution.searchInsert(new int[]{}, 7), 0);
+        assertEquals(solution.searchInsert(new int[]{1, 3, 5, 6}, 0), 0);
+    }
 }

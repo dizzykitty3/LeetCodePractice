@@ -230,4 +230,25 @@ public class Solution {
         }
         return -1; // no cases
     }
+
+    /**
+     * 35. Search Insert Position
+     * [Easy]
+     */
+    public int searchInsert(int[] nums, int target) {
+        final int length = nums.length;
+        if (length == 0) return 0;
+
+        for (int i = 0; i < length; i++) {
+            final int num = nums[i];
+            if (target > num && i == length - 1) {
+                return length;
+            } else if (target == num) {
+                return i;
+            } else if (target < num) {
+                return i;
+            }
+        }
+        return -1; // no cases maybe
+    }
 }
