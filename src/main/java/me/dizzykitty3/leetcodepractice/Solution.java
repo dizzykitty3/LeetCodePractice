@@ -38,7 +38,7 @@ public class Solution {
                 final String subString = s.substring(i1, i1 + i);
                 final boolean isValid = hasDuplicateChars(subString);
                 if (!isValid) {
-                    result = i;
+                    result++;
                     break; // don't need to check other substring with the same length
                 }
             }
@@ -49,7 +49,7 @@ public class Solution {
     protected boolean hasDuplicateChars(String s) {
         if (s == null || s.length() <= 1) return false;
 
-        HashSet<Character> set = new HashSet<>();
+        final HashSet<Character> set = new HashSet<>();
         for (char c : s.toCharArray()) {
             if (!set.add(c)) return true;
         }
