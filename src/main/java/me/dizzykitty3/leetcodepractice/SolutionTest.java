@@ -116,4 +116,15 @@ public class SolutionTest {
         assertFalse(solution.isOddNumber(200_000));
         assertFalse(solution.isOddNumber(123_456));
     }
+
+    @Test
+    void testStrStr() {
+        assertEquals(solution.strStr("sadbutsad", "sad"), 0);
+        assertEquals(solution.strStr("leetcode", "leeto"), -1);
+        assertEquals(solution.strStr("leetcode", "leetcode"), 0);
+        assertEquals(solution.strStr("a", "ab"), -1);
+        assertEquals(solution.strStr("acadab", "ab"), 4);
+        assertEquals(solution.strStr("123", "123"), 0);
+        assertEquals(solution.strStr("456123", "123"), 3);
+    }
 }
