@@ -7,7 +7,6 @@ import java.util.Stack;
 public class Solution {
     /**
      * 1. Two Sum
-     * <p>
      * [Easy] #Array #HashTable
      */
     public int[] twoSum(int[] nums, int target) {
@@ -24,7 +23,6 @@ public class Solution {
 
     /**
      * 3. Longest Substring Without Repeating Characters
-     * <p>
      * [Medium] #HashTable #String #SlidingWindow
      */
     public int lengthOfLongestSubstring(String s) {
@@ -58,7 +56,6 @@ public class Solution {
 
     /**
      * 9. Palindrome Number
-     * <p>
      * [Easy] #Math
      */
     public boolean isPalindrome(int x) {
@@ -78,7 +75,6 @@ public class Solution {
 
     /**
      * 13. Roman to Integer
-     * <p>
      * [Easy] #HashTable #Math #String
      */
     public int romanToInt(String s) {
@@ -117,7 +113,6 @@ public class Solution {
 
     /**
      * 14. Longest Common Prefix
-     * <p>
      * [Easy] #String #Trie
      */
     public String longestCommonPrefix(String[] strs) {
@@ -158,7 +153,6 @@ public class Solution {
 
     /**
      * 20. Valid Parentheses
-     * <p>
      * [Easy] #String #Stack
      */
     public boolean isValidParentheses(String s) {
