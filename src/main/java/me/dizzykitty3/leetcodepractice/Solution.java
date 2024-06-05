@@ -254,7 +254,7 @@ public class Solution {
 
     /**
      * 58. Length of Last Word
-     * [Easy]
+     * [Easy] #String
      */
     public int lengthOfLastWord(String s) {
         if ("".equals(s)) return 0;
