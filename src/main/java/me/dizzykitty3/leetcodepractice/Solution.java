@@ -213,7 +213,7 @@ public class Solution {
 
     /**
      * 28. Find the Index of the First Occurrence in a String
-     * [Easy]
+     * [Easy] #TwoPointers #String #StringMatching
      */
     public int strStr(String haystack, String needle) {
         if ("".equals(haystack) || "".equals(needle)) return -1;
@@ -233,7 +233,7 @@ public class Solution {
 
     /**
      * 35. Search Insert Position
-     * [Easy]
+     * [Easy] #Array #BinarySearch
      */
     public int searchInsert(int[] nums, int target) {
         final int length = nums.length;
