@@ -1,8 +1,6 @@
 package me.dizzykitty3.leetcodepractice;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Stack;
+import java.util.*;
 
 public class Solution {
     /**
@@ -52,6 +50,41 @@ public class Solution {
             if (!set.add(c)) return true;
         }
         return false;
+    }
+
+    /**
+     * 4. Median of Two Sorted Arrays
+     * [Hard]
+     */
+    @SuppressWarnings("unused")
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        final int length1 = nums1.length;
+        final int length2 = nums2.length;
+        if (length1 == 0) return findMedianSortedArray(nums2);
+        if (length2 == 0) return findMedianSortedArray(nums1);
+        if (length1 == 1 && length2 == 1) return (nums1[0] + nums2[0]) * 0.5D;
+
+        final int totalLength = length1 + length2;
+        final boolean isOdd = isOddNumber(totalLength);
+        final int resultIndex = totalLength / 2 + 1;
+
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < length1; i++) {
+            // TODO
+        }
+        return 0D; // TODO
+    }
+
+    protected boolean isOddNumber(int num) {
+        return Math.abs(num) % 2 == 1;
+    }
+
+    private double findMedianSortedArray(int[] nums) {
+        final int length = nums.length;
+        if (length == 0) return 0D;
+        if (length == 1) return nums[0];
+        final int resultIndex = length / 2 + 1;
+        return isOddNumber(length) ? nums[resultIndex] : (nums[resultIndex - 1] + nums[resultIndex]) * 0.5D;
     }
 
     /**

@@ -88,4 +88,32 @@ public class SolutionTest {
         assertEquals(solution.lengthOfLongestSubstring("java"), 3); // "jav"
         assertEquals(solution.lengthOfLongestSubstring("abcdefg"), 7); // "abcdefg"
     }
+
+    @Test
+    void testFindMedianSortedArrays() {
+        assertEquals(solution.findMedianSortedArrays(new int[]{1}, new int[]{1}), 1D);
+        assertEquals(solution.findMedianSortedArrays(new int[]{0}, new int[]{0}), 0D);
+        assertEquals(solution.findMedianSortedArrays(new int[]{-1}, new int[]{-1}), -1D);
+        assertEquals(solution.findMedianSortedArrays(new int[]{-1}, new int[]{1}), 0D);
+        assertEquals(solution.findMedianSortedArrays(new int[]{1}, new int[]{3}), 2D);
+        assertEquals(solution.findMedianSortedArrays(new int[]{1}, new int[]{2}), 1.5D);
+        assertEquals(solution.findMedianSortedArrays(new int[]{}, new int[]{2}), 2D);
+        assertEquals(solution.findMedianSortedArrays(new int[]{}, new int[]{-1}), -1D);
+        assertEquals(solution.findMedianSortedArrays(new int[]{2}, new int[]{}), 2D);
+        assertEquals(solution.findMedianSortedArrays(new int[]{-1}, new int[]{}), -1D);
+    }
+
+    @Test
+    void testIsOddNumber() {
+        assertTrue(solution.isOddNumber(1));
+        assertTrue(solution.isOddNumber(3));
+        assertTrue(solution.isOddNumber(-1));
+        assertTrue(solution.isOddNumber(5));
+        assertFalse(solution.isOddNumber(2));
+        assertFalse(solution.isOddNumber(4));
+        assertFalse(solution.isOddNumber(0));
+        assertFalse(solution.isOddNumber(-2));
+        assertFalse(solution.isOddNumber(200_000));
+        assertFalse(solution.isOddNumber(123_456));
+    }
 }
