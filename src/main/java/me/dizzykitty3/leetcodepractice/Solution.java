@@ -251,4 +251,19 @@ public class Solution {
         }
         return -1; // no cases maybe
     }
+
+    /**
+     * 58. Length of Last Word
+     * [Easy]
+     */
+    public int lengthOfLastWord(String s) {
+        if ("".equals(s)) return 0;
+
+        final String trimmedString = s.trim();
+        if (!trimmedString.contains(" ")) return trimmedString.length();
+
+        final int lastIndex = trimmedString.lastIndexOf(" ");
+        final String lastWord = trimmedString.substring(lastIndex + 1);
+        return lastWord.length();
+    }
 }

@@ -136,4 +136,17 @@ public class SolutionTest {
         assertEquals(solution.searchInsert(new int[]{}, 7), 0);
         assertEquals(solution.searchInsert(new int[]{1, 3, 5, 6}, 0), 0);
     }
+
+    @Test
+    void testLengthOfLastWord() {
+        assertEquals(solution.lengthOfLastWord("Hello World"), 5);
+        assertEquals(solution.lengthOfLastWord("   fly me   to   the moon  "), 4);
+        assertEquals(solution.lengthOfLastWord("luffy is still joyboy"), 6);
+        assertEquals(solution.lengthOfLastWord(""), 0);
+        assertEquals(solution.lengthOfLastWord("leetcode practice"), 8);
+        assertEquals(solution.lengthOfLastWord("solution test java"), 4);
+        assertEquals(solution.lengthOfLastWord(" java"), 4);
+        assertEquals(solution.lengthOfLastWord("                         java"), 4);
+        assertEquals(solution.lengthOfLastWord("                         java          "), 4);
+    }
 }
