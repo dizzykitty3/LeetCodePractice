@@ -11,8 +11,9 @@ public class Solution {
      */
     public int[] twoSum(int[] nums, int target) {
         final int length = nums.length;
+
         for (int i = 0; i < length; i++) {
-            int gap = target - nums[i]; // avoid doing extensive addition operations
+            final int gap = target - nums[i]; // avoid doing extensive addition operations
             for (int j = i + 1; j < length; j++) { // j starts with i + 1
                 if (nums[j] == gap) return new int[]{i, j}; // return the answer
             }
@@ -28,8 +29,10 @@ public class Solution {
     public boolean isPalindrome(int x) {
         if (x < 0) return false;
         if (x == 0) return true;
+
         int temp = x;
         int reversed = 0;
+
         while (temp > 9) {
             reversed = (reversed + (temp % 10)) * 10;
             temp = temp / 10;
@@ -45,14 +48,12 @@ public class Solution {
      */
     public int romanToInt(String s) {
         final int length = s.length();
-
         int result = 0;
         int currentValue;
         int nextValue;
 
         for (int i = 0; i < length; i++) {
             currentValue = toInt(s.charAt(i));
-
             if (i + 1 >= length) nextValue = 0;
             else nextValue = toInt(s.charAt(i + 1));
 
@@ -63,7 +64,6 @@ public class Solution {
                 result += currentValue;
             }
         }
-
         return result;
     }
 
@@ -87,11 +87,10 @@ public class Solution {
      */
     public String longestCommonPrefix(String[] strs) {
         if (Objects.isNull(strs) || strs.length == 0) return "";
-
         if (strs.length == 1) return strs[0];
 
-        int mLongestLength = longestLength(strs);
-        StringBuilder builder = new StringBuilder();
+        final int mLongestLength = longestLength(strs);
+        final StringBuilder builder = new StringBuilder();
 
         for (int i = 0; i < mLongestLength; i++) {
             char temp = 0;
@@ -115,11 +114,10 @@ public class Solution {
 
         int longestLength = 0;
 
-        for (int i = 0; i < strs.length; i++) {
-            int currentLength = strs[i].length();
+        for (String str : strs) {
+            final int currentLength = str.length();
             if (currentLength > longestLength) longestLength = currentLength;
         }
-
         return longestLength;
     }
 
@@ -128,24 +126,24 @@ public class Solution {
      * <p>
      * [Easy] #String #Stack
      */
-    public boolean isValid(String s) {
+    public boolean isValidParentheses(String s) {
         if (Objects.isNull(s) || s.length() % 2 != 0) return false;
 
-        Stack<String> stack = new Stack<>();
+        final Stack<Character> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
-            char currentChar = s.charAt(i);
+            final char currentChar = s.charAt(i);
 
-            if (!stack.isEmpty()) {
-                String topChar = stack.peek();
-                if ((currentChar == ')' && Objects.equals(topChar, "("))
-                        || (currentChar == ']' && Objects.equals(topChar, "["))
-                        || (currentChar == '}' && Objects.equals(topChar, "{"))) {
+            if (stack.isEmpty()) {
+                stack.push(currentChar);
+            } else {
+                final Character topChar = stack.peek();
+                if ((currentChar == ')' && Objects.equals(topChar, '('))
+                        || (currentChar == ']' && Objects.equals(topChar, '['))
+                        || (currentChar == '}' && Objects.equals(topChar, '{'))) {
                     stack.pop();
                 } else {
-                    stack.push(String.valueOf(s.charAt(i)));
+                    stack.push(currentChar);
                 }
-            } else {
-                stack.push(String.valueOf(currentChar));
             }
         }
         return stack.isEmpty();
