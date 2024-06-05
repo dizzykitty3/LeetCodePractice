@@ -65,4 +65,27 @@ public class SolutionTest {
         assertTrue(solution.isValidParentheses("{[()]}"));
         assertFalse(solution.isValidParentheses("{[(()]}"));
     }
+
+    @Test
+    void testHasDuplicateChars() {
+        assertFalse(solution.hasDuplicateChars(""));
+        assertFalse(solution.hasDuplicateChars("a"));
+        assertTrue(solution.hasDuplicateChars("aa"));
+        assertFalse(solution.hasDuplicateChars("abc"));
+        assertFalse(solution.hasDuplicateChars("abcd"));
+        assertTrue(solution.hasDuplicateChars("abcdd"));
+    }
+
+    @Test
+    void testLengthOfLongestSubstring() {
+        assertEquals(solution.lengthOfLongestSubstring(""), 0); // ""
+        assertEquals(solution.lengthOfLongestSubstring("aaa"), 1); // "a"
+        assertEquals(solution.lengthOfLongestSubstring("abcabcbb"), 3); // "abc"
+        assertEquals(solution.lengthOfLongestSubstring("bbbbb"), 1); // "b"
+        assertEquals(solution.lengthOfLongestSubstring("pwwkew"), 3); // "wke"
+        assertEquals(solution.lengthOfLongestSubstring("adbshell"), 7); // "adbshel"
+        assertEquals(solution.lengthOfLongestSubstring("google"), 4); // "ogle"
+        assertEquals(solution.lengthOfLongestSubstring("java"), 3); // "jav"
+        assertEquals(solution.lengthOfLongestSubstring("abcdefg"), 7); // "abcdefg"
+    }
 }
