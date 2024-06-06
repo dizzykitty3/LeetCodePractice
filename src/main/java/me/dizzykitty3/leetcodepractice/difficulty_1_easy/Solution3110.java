@@ -17,7 +17,7 @@ public class Solution3110 {
         if (length == 1) return 0;
 
         final char[] chars = s.toCharArray();
-        List<Integer> values = new ArrayList<>();
+        final List<Integer> values = new ArrayList<>();
         for (char ch : chars) {
             values.add((int) ch);
         }
