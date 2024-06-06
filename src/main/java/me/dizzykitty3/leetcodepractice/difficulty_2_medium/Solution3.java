@@ -1,4 +1,4 @@
-package me.dizzykitty3.leetcodepractice.medium;
+package me.dizzykitty3.leetcodepractice.difficulty_2_medium;
 
 import org.junit.jupiter.api.Test;
 
