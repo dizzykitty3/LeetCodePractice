@@ -6,6 +6,7 @@ import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+// 14. Longest Common Prefix
 // Easy
 // #String #Trie
 public class Solution14 {

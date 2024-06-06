@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+// 35. Search Insert Position
 // Easy
 // #Array #BinarySearch
 public class Solution35 {
