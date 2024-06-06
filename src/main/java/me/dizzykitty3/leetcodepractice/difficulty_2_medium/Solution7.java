@@ -4,30 +4,23 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// TODO submit answer
 // 7. Reverse Integer
 // Medium
-//
+// #Math
 public class Solution7 {
     public int reverse(int x) {
-        if (x == 0) return 0;
+        // Note: x = Math.abs(x) when x < 0 overflows if x = Integer.MIN_VALUE,
+        // since Integer.MIN_VALUE == -2_147_483_648, and Integer.MAX_VALUE == 2_147_483_647.
 
-        boolean isMinus = false;
-        if (x < 0) {
-            isMinus = true;
-            x = Math.abs(x);
-        }
-
-        int temp = x;
         int reversed = 0;
 
-        while (temp > 9) {
-            reversed = (reversed + (temp % 10)) * 10;
-            temp = temp / 10;
+        while (x != 0) {
+            final int nextDigit = x % 10;
+            x /= 10;
+            if (reversed > Integer.MAX_VALUE/10 || (reversed == Integer.MAX_VALUE / 10 && nextDigit > 7)) return 0; // overflow
+            if (reversed < Integer.MIN_VALUE/10 || (reversed == Integer.MIN_VALUE / 10 && nextDigit < -8)) return 0; // overflow
+            reversed = reversed * 10 + nextDigit;
         }
-        reversed += temp;
-
-        if (isMinus) return -reversed;
         return reversed;
     }
 
@@ -42,5 +35,10 @@ public class Solution7 {
         assertEquals(reverse(1_200), 21);
         assertEquals(reverse(-1_200), -21);
         assertEquals(reverse(-123_456), -654_321);
+        assertEquals(reverse(1_534_236_469), 0);
+        assertEquals(reverse(-1_534_236_469), 0);
+        assertEquals(reverse(-1_234_567_899), 0);
+        assertEquals(reverse(-2_147_483_412), -2_143_847_412);
+        assertEquals(reverse(-2_147_483_648), 0); // MIN_VALUE
     }
 }
