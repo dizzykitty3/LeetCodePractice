@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // 13. Roman to Integer
-// Easy
-// #HashTable #Math #String
 public class Solution13 {
     public int romanToInt(String s) {
         final int length = s.length();

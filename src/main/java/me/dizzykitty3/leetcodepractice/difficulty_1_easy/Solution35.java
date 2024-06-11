@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // 35. Search Insert Position
-// Easy
-// #Array #BinarySearch
 public class Solution35 {
     public int searchInsert(int[] nums, int target) {
         final int length = nums.length;
@@ -16,9 +14,7 @@ public class Solution35 {
             final int num = nums[i];
             if (target > num && i == length - 1) {
                 return length;
-            } else if (target == num) {
-                return i;
-            } else if (target < num) {
+            } else if (target == num || target < num) {
                 return i;
             }
         }

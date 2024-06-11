@@ -9,8 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 // TODO Time Limit Exceeded
 // 3. Longest Substring Without Repeating Characters
-// Medium
-// #HashTable #String #SlidingWindow
 public class Solution3 {
     // Submit result: Time Limit Exceeded
     public int lengthOfLongestSubstring(String s) {

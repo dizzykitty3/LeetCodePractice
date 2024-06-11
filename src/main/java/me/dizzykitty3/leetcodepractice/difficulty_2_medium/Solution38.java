@@ -8,8 +8,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 // 38. Count and Say
-// Medium
-// #String
 public class Solution38 {
     public String countAndSay(int n) {
         String result = "1";

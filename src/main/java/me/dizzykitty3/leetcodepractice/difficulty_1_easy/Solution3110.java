@@ -8,8 +8,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // 3110. Score of a String
-// Easy
-// #String
 public class Solution3110 {
     public int scoreOfString(String s) {
         if ("".equals(s)) return 0;

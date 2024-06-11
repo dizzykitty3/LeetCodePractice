@@ -9,8 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 // 20. Valid Parentheses
-// Easy
-// #String #Stack
 public class Solution20 {
     public boolean isValid(String s) {
         if (Objects.isNull(s) || s.length() % 2 != 0) return false;
@@ -23,9 +21,7 @@ public class Solution20 {
                 stack.push(currentChar);
             } else {
                 final Character topChar = stack.peek();
-                if ((currentChar == ')' && Objects.equals(topChar, '('))
-                        || (currentChar == ']' && Objects.equals(topChar, '['))
-                        || (currentChar == '}' && Objects.equals(topChar, '{'))) {
+                if (matching(currentChar, topChar)) {
                     stack.pop();
                 } else {
                     stack.push(currentChar);
@@ -33,6 +29,12 @@ public class Solution20 {
             }
         }
         return stack.isEmpty();
+    }
+
+    private boolean matching(char currentChar, char topChar) {
+        return (currentChar == ')' && Objects.equals(topChar, '('))
+                || (currentChar == ']' && Objects.equals(topChar, '['))
+                || (currentChar == '}' && Objects.equals(topChar, '{'));
     }
 
     @Test
