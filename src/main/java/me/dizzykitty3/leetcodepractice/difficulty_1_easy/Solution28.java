@@ -10,13 +10,13 @@ public class Solution28 {
         if ("".equals(haystack) || "".equals(needle)) return -1;
         if (!haystack.contains(needle)) return -1;
 
-        final int needleLength = needle.length();
-        final int haystackLength = haystack.length();
+        final var needleLength = needle.length();
+        final var haystackLength = haystack.length();
         if (needleLength > haystackLength) return -1;
 
-        final int gap = haystackLength - needleLength;
-        for (int i = 0; i <= gap; i++) {
-            final String temp = haystack.substring(i, i + needleLength);
+        final var gap = haystackLength - needleLength;
+        for (var i = 0; i <= gap; i++) {
+            final var temp = haystack.substring(i, i + needleLength);
             if (temp.equals(needle)) return i;
         }
         return -1; // no cases

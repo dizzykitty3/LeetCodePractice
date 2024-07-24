@@ -10,8 +10,8 @@ import static org.junit.jupiter.api.Assertions.*;
 // 38. Count and Say
 public class Solution38 {
     public String countAndSay(int n) {
-        String result = "1";
-        for (int i = 1; i < n; i++) {
+        var result = "1";
+        for (var i = 1; i < n; i++) {
             result = runLengthEncoding(result);
         }
         return result;
@@ -19,19 +19,19 @@ public class Solution38 {
 
     private String runLengthEncoding(String s) {
         if ("".equals(s)) return "invalid input";
-        final int length = s.length();
+        final var length = s.length();
         if (isRepeating(s)) return length + s.substring(0, 1);
 
-        final List<Integer> indexes = splitIndexes(s);
-        final StringBuilder builder = new StringBuilder();
-        int start = 0;
-        for (Integer index : indexes) {
-            final String temp = s.substring(start, index + 1);
+        final var indexes = splitIndexes(s);
+        final var builder = new StringBuilder();
+        var start = 0;
+        for (var index : indexes) {
+            final var temp = s.substring(start, index + 1);
             builder.append(temp.length());
             builder.append(temp.charAt(0));
             start = index + 1;
         }
-        final String lastSubstring = s.substring(start, length);
+        final var lastSubstring = s.substring(start, length);
         builder.append(lastSubstring.length());
         builder.append(lastSubstring.charAt(0));
         return builder.toString();
@@ -39,9 +39,9 @@ public class Solution38 {
 
     private boolean isRepeating(String s) {
         if ("".equals(s)) return false;
-        final int length = s.length();
+        final var length = s.length();
         final char ch = s.charAt(0);
-        for (int i = 0; i < length; i++) {
+        for (var i = 0; i < length; i++) {
             if (s.charAt(i) != ch) return false;
         }
         return true;
@@ -49,8 +49,8 @@ public class Solution38 {
 
     private List<Integer> splitIndexes(String s) {
         final char[] chars = s.toCharArray();
-        final List<Integer> indexes = new ArrayList<>();
-        for (int i = 0; i < chars.length - 1; i++) {
+        final var indexes = new ArrayList<Integer>();
+        for (var i = 0; i < chars.length - 1; i++) {
             if (chars[i] != chars[i + 1]) indexes.add(i);
         }
         return indexes;

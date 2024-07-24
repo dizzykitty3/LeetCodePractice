@@ -10,10 +10,10 @@ public class Solution7 {
         // Note: x = Math.abs(x) when x < 0 overflows if x = Integer.MIN_VALUE,
         // since Integer.MIN_VALUE == -2_147_483_648, and Integer.MAX_VALUE == 2_147_483_647.
 
-        int reversed = 0;
+        var reversed = 0;
 
         while (x != 0) {
-            final int nextDigit = x % 10;
+            final var nextDigit = x % 10;
             x /= 10;
             if (reversed > Integer.MAX_VALUE/10 || (reversed == Integer.MAX_VALUE / 10 && nextDigit > 7)) return 0; // overflow
             if (reversed < Integer.MIN_VALUE/10 || (reversed == Integer.MIN_VALUE / 10 && nextDigit < -8)) return 0; // overflow

@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 // 1. Two Sum
 public class Solution1 {
     public int[] twoSum(int[] nums, int target) {
-        final int length = nums.length;
+        final var length = nums.length;
 
-        for (int i = 0; i < length; i++) {
-            final int gap = target - nums[i]; // avoid doing extensive addition operations
-            for (int j = i + 1; j < length; j++) { // j starts with i + 1
+        for (var i = 0; i < length; i++) {
+            final var gap = target - nums[i]; // avoid doing extensive addition operations
+            for (var j = i + 1; j < length; j++) { // j starts with i + 1
                 if (nums[j] == gap) return new int[]{i, j};
             }
         }

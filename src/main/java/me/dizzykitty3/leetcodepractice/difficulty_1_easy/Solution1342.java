@@ -9,7 +9,7 @@ public class Solution1342 {
     public int numberOfSteps(int num) {
         if (num < 0) return -1;
 
-        int step = 0;
+        var step = 0;
         while (num != 0) {
             num = process(num);
             step += 1;

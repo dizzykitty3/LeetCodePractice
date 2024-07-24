@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 // 35. Search Insert Position
 public class Solution35 {
     public int searchInsert(int[] nums, int target) {
-        final int length = nums.length;
+        final var length = nums.length;
         if (length == 0) return 0;
 
-        for (int i = 0; i < length; i++) {
-            final int num = nums[i];
+        for (var i = 0; i < length; i++) {
+            final var num = nums[i];
             if (target > num && i == length - 1) {
                 return length;
             } else if (target == num || target < num) {

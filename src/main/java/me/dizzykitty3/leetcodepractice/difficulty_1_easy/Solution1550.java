@@ -11,19 +11,19 @@ public class Solution1550 {
         if (arr == null || arr.length <= 2) return false;
         if (arr.length == 3) return isOddNumber(arr[0]) && isOddNumber(arr[1]) && isOddNumber(arr[2]);
 
-        final int length = arr.length;
-        for (int i = 0; i + 2 < length; i++) {
-            final boolean r3 = isOddNumber(arr[i + 2]);
+        final var length = arr.length;
+        for (var i = 0; i + 2 < length; i++) {
+            final var r3 = isOddNumber(arr[i + 2]);
             if (!r3) {
                 i += 2;
                 continue;
             }
-            final boolean r2 = isOddNumber(arr[i + 1]);
+            final var r2 = isOddNumber(arr[i + 1]);
             if (!r2) {
                 i += 1;
                 continue;
             }
-            final boolean r1 = isOddNumber(arr[i]);
+            final var r1 = isOddNumber(arr[i]);
             if (r1) return true;
         }
         return false;

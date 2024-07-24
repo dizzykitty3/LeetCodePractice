@@ -9,11 +9,11 @@ public class Solution58 {
     public int lengthOfLastWord(String s) {
         if ("".equals(s)) return 0;
 
-        final String trimmedString = s.trim();
+        final var trimmedString = s.trim();
         if (!trimmedString.contains(" ")) return trimmedString.length();
 
-        final int lastIndex = trimmedString.lastIndexOf(" ");
-        final String lastWord = trimmedString.substring(lastIndex + 1);
+        final var lastIndex = trimmedString.lastIndexOf(" ");
+        final var lastWord = trimmedString.substring(lastIndex + 1);
         return lastWord.length();
     }
 

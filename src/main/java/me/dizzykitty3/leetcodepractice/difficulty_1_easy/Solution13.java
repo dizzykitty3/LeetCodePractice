@@ -7,12 +7,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 // 13. Roman to Integer
 public class Solution13 {
     public int romanToInt(String s) {
-        final int length = s.length();
-        int result = 0;
+        final var length = s.length();
+        var result = 0;
         int currentValue;
         int nextValue;
 
-        for (int i = 0; i < length; i++) {
+        for (var i = 0; i < length; i++) {
             currentValue = toInt(s.charAt(i));
             if (i + 1 >= length) nextValue = 0;
             else nextValue = toInt(s.charAt(i + 1));

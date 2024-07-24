@@ -13,8 +13,8 @@ public class Solution20 {
     public boolean isValid(String s) {
         if (Objects.isNull(s) || s.length() % 2 != 0) return false;
 
-        final Stack<Character> stack = new Stack<>();
-        for (int i = 0; i < s.length(); i++) {
+        final var stack = new Stack<Character>();
+        for (var i = 0; i < s.length(); i++) {
             final char currentChar = s.charAt(i);
 
             if (stack.isEmpty()) {

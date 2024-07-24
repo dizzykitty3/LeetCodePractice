@@ -8,17 +8,30 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // 14. Longest Common Prefix
 public class Solution14 {
+    private static int longestLength(String[] strs) {
+        if (Objects.isNull(strs) || strs.length == 0) return 0;
+        if (strs.length == 1) return strs[0].length();
+
+        var longestLength = 0;
+
+        for (var str : strs) {
+            final var currentLength = str.length();
+            if (currentLength > longestLength) longestLength = currentLength;
+        }
+        return longestLength;
+    }
+
     public String longestCommonPrefix(String[] strs) {
         if (Objects.isNull(strs) || strs.length == 0) return "";
-        final int length = strs.length;
+        final var length = strs.length;
         if (length == 1) return strs[0];
 
-        final int mLongestLength = longestLength(strs);
-        final StringBuilder builder = new StringBuilder();
+        final var mLongestLength = longestLength(strs);
+        final var builder = new StringBuilder();
 
-        for (int i = 0; i < mLongestLength; i++) {
+        for (var i = 0; i < mLongestLength; i++) {
             char temp = 0;
-            for (int i1 = 0; i1 < length; i1++) {
+            for (var i1 = 0; i1 < length; i1++) {
                 if (strs[i1].length() <= i) return builder.toString();
 
                 if (0 == i1) {
@@ -32,19 +45,6 @@ public class Solution14 {
             builder.append(temp);
         }
         return builder.toString();
-    }
-
-    private static int longestLength(String[] strs) {
-        if (Objects.isNull(strs) || strs.length == 0) return 0;
-        if (strs.length == 1) return strs[0].length();
-
-        int longestLength = 0;
-
-        for (String str : strs) {
-            final int currentLength = str.length();
-            if (currentLength > longestLength) longestLength = currentLength;
-        }
-        return longestLength;
     }
 
     @Test

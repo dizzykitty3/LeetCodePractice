@@ -11,8 +11,8 @@ public class Solution9 {
         if (x < 0) return false;
         if (x == 0) return true;
 
-        int temp = x;
-        int reversed = 0;
+        var temp = x;
+        var reversed = 0;
 
         while (temp > 9) {
             reversed = (reversed + (temp % 10)) * 10;

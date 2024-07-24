@@ -3,7 +3,6 @@ package me.dizzykitty3.leetcodepractice.difficulty_1_easy;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -11,18 +10,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Solution3110 {
     public int scoreOfString(String s) {
         if ("".equals(s)) return 0;
-        final int length = s.length();
+        final var length = s.length();
         if (length == 1) return 0;
 
         final char[] chars = s.toCharArray();
-        final List<Integer> values = new ArrayList<>();
+        final var values = new ArrayList<Integer>();
         for (char ch : chars) {
             values.add((int) ch);
         }
 
-        int result = 0;
-        for (int i = 0; i < (length - 1); i++) {
-            final int gap = Math.abs(values.get(i + 1) - values.get(i));
+        var result = 0;
+        for (var i = 0; i < (length - 1); i++) {
+            final var gap = Math.abs(values.get(i + 1) - values.get(i));
             result += gap;
         }
         return result;
