@@ -2,8 +2,6 @@ package me.dizzykitty3.leetcodepractice.difficulty_1_easy;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -12,14 +10,12 @@ public class Solution2042 {
     public boolean areNumbersAscending(String s) {
         if (s == null) return true;
         final var subs = s.split("\\s+");
-        var list = new ArrayList<Integer>();
         var temp = 0;
         for (var sub : subs) {
             try {
                 var number = Integer.parseInt(sub);
                 if (temp < number) {
                     temp = number;
-                    list.add(number);
                 } else return false;
             } catch (NumberFormatException ignore) {
                 // ignore
