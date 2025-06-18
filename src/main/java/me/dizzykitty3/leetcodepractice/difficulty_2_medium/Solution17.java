@@ -25,24 +25,24 @@ public class Solution17 {
             result.addAll(Arrays.asList(digitToLetter(validDigits.charAt(0))));
         } else if (length == 2) {
             // ["aa", "ab", "ac", "ba", "bb", "bc", "ca", "cb", "cc"]
-            for (int i = 0; i <= length; i++) {
-                for (int i1 = 0; i1 <= length; i1++) {
+            for (int i = 0; i < digitToLetter(validDigits.charAt(0)).length; i++) {
+                for (int i1 = 0; i1 < digitToLetter(validDigits.charAt(1)).length; i1++) {
                     result.add(digitToLetter(validDigits.charAt(0))[i] + digitToLetter(validDigits.charAt(1))[i1]);
                 }
             }
         } else if (length == 3) {
-            for (int i = 0; i < length; i++) {
-                for (int i1 = 0; i1 < length; i1++) {
-                    for (int i2 = 0; i2 < length; i2++) {
+            for (int i = 0; i < digitToLetter(validDigits.charAt(0)).length; i++) {
+                for (int i1 = 0; i1 < digitToLetter(validDigits.charAt(1)).length; i1++) {
+                    for (int i2 = 0; i2 < digitToLetter(validDigits.charAt(2)).length; i2++) {
                         result.add(digitToLetter(validDigits.charAt(0))[i] + digitToLetter(validDigits.charAt(1))[i1] + digitToLetter(validDigits.charAt(2))[i2]);
                     }
                 }
             }
         } else {
-            for (int i = 0; i < length; i++) {
-                for (int i1 = 0; i1 < length; i1++) {
-                    for (int i2 = 0; i2 < length; i2++) {
-                        for (int i3 = 0; i3 < length; i3++) {
+            for (int i = 0; i < digitToLetter(validDigits.charAt(0)).length; i++) {
+                for (int i1 = 0; i1 < digitToLetter(validDigits.charAt(1)).length; i1++) {
+                    for (int i2 = 0; i2 < digitToLetter(validDigits.charAt(2)).length; i2++) {
+                        for (int i3 = 0; i3 < digitToLetter(validDigits.charAt(3)).length; i3++) {
                             result.add(digitToLetter(validDigits.charAt(0))[i] + digitToLetter(validDigits.charAt(1))[i1] + digitToLetter(validDigits.charAt(2))[i2] + digitToLetter(validDigits.charAt(3))[i3]);
                         }
                     }
@@ -112,6 +112,7 @@ public class Solution17 {
         assertEquals(Arrays.asList("p", "q", "r", "s"), letterCombinations("7"));
         assertEquals(Arrays.asList("t", "u", "v"), letterCombinations("8"));
         assertEquals(Arrays.asList("w", "x", "y", "z"), letterCombinations("9"));
+        assertEquals(Arrays.asList("ww", "wx", "wy", "wz", "xw", "xx", "xy", "xz", "yw", "yx", "yy", "yz", "zw", "zx", "zy", "zz"), letterCombinations("99"));
         assertEquals(Collections.emptyList(), letterCombinations("0"));
         assertEquals(Collections.emptyList(), letterCombinations("1"));
         assertEquals(Collections.emptyList(), letterCombinations("01"));
@@ -120,5 +121,6 @@ public class Solution17 {
         assertEquals(Arrays.asList("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"), letterCombinations("123"));
         assertEquals(Arrays.asList("aa", "ab", "ac", "ba", "bb", "bc", "ca", "cb", "cc"), letterCombinations("22"));
         assertEquals(Arrays.asList("aaa", "aab", "aac", "aba", "abb", "abc", "aca", "acb", "acc", "baa", "bab", "bac", "bba", "bbb", "bbc", "bca", "bcb", "bcc", "caa", "cab", "cac", "cba", "cbb", "cbc", "cca", "ccb", "ccc"), letterCombinations("222"));
+        assertEquals(Arrays.asList("www", "wwx", "wwy", "wwz", "wxw", "wxx", "wxy", "wxz", "wyw", "wyx", "wyy", "wyz", "wzw", "wzx", "wzy", "wzz", "xww", "xwx", "xwy", "xwz", "xxw", "xxx", "xxy", "xxz", "xyw", "xyx", "xyy", "xyz", "xzw", "xzx", "xzy", "xzz", "yww", "ywx", "ywy", "ywz", "yxw", "yxx", "yxy", "yxz", "yyw", "yyx", "yyy", "yyz", "yzw", "yzx", "yzy", "yzz", "zww", "zwx", "zwy", "zwz", "zxw", "zxx", "zxy", "zxz", "zyw", "zyx", "zyy", "zyz", "zzw", "zzx", "zzy", "zzz"), letterCombinations("999"));
     }
 }
