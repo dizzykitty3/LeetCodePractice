@@ -4,7 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// 35. Search Insert Position
+/**
+ * 35 Search Insert Position
+ * <li>Array</li>
+ * <li>Binary Search</li>
+ */
 public class Solution35 {
     public int searchInsert(int[] nums, int target) {
         final var length = nums.length;

@@ -4,7 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// 1342. Number of Steps to Reduce a Number to Zero
+/**
+ * 1342 Number of Steps to Reduce a Number to Zero
+ * <li>Math</li>
+ * <li>Bit Manipulation</li>
+ */
 public class Solution1342 {
     public int numberOfSteps(int num) {
         if (num < 0) return -1;

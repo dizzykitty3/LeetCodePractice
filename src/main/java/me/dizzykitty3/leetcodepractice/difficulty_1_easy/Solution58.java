@@ -4,7 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// 58. Length of Last Word
+/**
+ * 58 Length of Last Word
+ * <li>String</li>
+ */
 public class Solution58 {
     public int lengthOfLastWord(String s) {
         if ("".equals(s)) return 0;

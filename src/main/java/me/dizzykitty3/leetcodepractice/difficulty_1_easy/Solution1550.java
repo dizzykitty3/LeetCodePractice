@@ -5,7 +5,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-// 1550. Three Consecutive Odds
+/**
+ * 1550 Three Consecutive Odds
+ * <li>Array</li>
+ */
 public class Solution1550 {
     public boolean threeConsecutiveOdds(int[] arr) {
         if (arr == null || arr.length <= 2) return false;

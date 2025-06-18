@@ -4,7 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// 7. Reverse Integer
+/**
+ * 7 Reverse Integer
+ * <li>Math</li>
+ */
 public class Solution7 {
     public int reverse(int x) {
         // Note: x = Math.abs(x) when x < 0 overflows if x = Integer.MIN_VALUE,

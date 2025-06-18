@@ -4,7 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-// 1. Two Sum
+/**
+ * 1 Two Sum
+ * <li>Array</li>
+ * <li>Hash Table</li>
+ */
 public class Solution1 {
     public int[] twoSum(int[] nums, int target) {
         final var length = nums.length;

@@ -7,7 +7,12 @@ import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// 2144. Minimum Cost of Buying Candies With Discount
+/**
+ * 2144 Minimum Cost of Buying Candies With Discount
+ * <li>Array</li>
+ * <li>Greedy</li>
+ * <li>Sorting</li>
+ */
 public class Solution2144 {
     public int minimumCost(int[] cost) {
         if (cost == null || cost.length == 0) return 0;

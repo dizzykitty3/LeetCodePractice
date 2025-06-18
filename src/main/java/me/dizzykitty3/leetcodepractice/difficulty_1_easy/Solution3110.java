@@ -6,7 +6,10 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// 3110. Score of a String
+/**
+ * 3110 Score of a String
+ * <li>String</li>
+ */
 public class Solution3110 {
     public int scoreOfString(String s) {
         if ("".equals(s)) return 0;

@@ -5,7 +5,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-// 2042. Check if Numbers Are Ascending in a Sentence
+/**
+ * 2042 Check if Numbers Are Ascending in a Sentence
+ * <li>String</li>
+ */
 public class Solution2042 {
     public boolean areNumbersAscending(String s) {
         if (s == null) return true;

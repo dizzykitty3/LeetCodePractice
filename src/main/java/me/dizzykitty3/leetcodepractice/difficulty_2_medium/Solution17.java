@@ -9,7 +9,12 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// 17. Letter Combinations of a Phone Number
+/**
+ * 17 Letter Combinations of a Phone Number
+ * <li>Hash Table</li>
+ * <li>String</li>
+ * <li>Backtracking</li>
+ */
 public class Solution17 {
     public List<String> letterCombinations(String digits) {
         if (isDigitsInvalid(digits)) return Collections.emptyList();

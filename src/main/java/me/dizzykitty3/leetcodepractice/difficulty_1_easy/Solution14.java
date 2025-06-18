@@ -6,7 +6,11 @@ import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// 14. Longest Common Prefix
+/**
+ * 14 Longest Common Prefix
+ * <li>String</li>
+ * <li>Trie</li>
+ */
 public class Solution14 {
     private static int longestLength(String[] strs) {
         if (Objects.isNull(strs) || strs.length == 0) return 0;

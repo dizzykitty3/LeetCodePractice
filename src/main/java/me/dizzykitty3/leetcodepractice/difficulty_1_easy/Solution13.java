@@ -4,7 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// 13. Roman to Integer
+/**
+ * 13 Roman to Integer
+ * <li>Hash Table</li>
+ * <li>Math</li>
+ * <li>String</li>
+ */
 public class Solution13 {
     public int romanToInt(String s) {
         final var length = s.length();

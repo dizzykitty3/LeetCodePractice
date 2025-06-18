@@ -5,7 +5,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-// 9. Palindrome Number
+/**
+ * 9 Palindrome Number
+ * <li>Math</li>
+ */
 public class Solution9 {
     public boolean isPalindrome(int x) {
         if (x < 0) return false;

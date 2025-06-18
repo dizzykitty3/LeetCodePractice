@@ -8,7 +8,11 @@ import java.util.Stack;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-// 20. Valid Parentheses
+/**
+ * 20 Valid Parentheses
+ * <li>String</li>
+ * <li>Stack</li>
+ */
 public class Solution20 {
     public boolean isValid(String s) {
         if (Objects.isNull(s) || s.length() % 2 != 0) return false;

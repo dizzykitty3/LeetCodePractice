@@ -7,7 +7,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// 38. Count and Say
+/**
+ * 38 Count and Say
+ * <li>String</li>
+ */
 public class Solution38 {
     public String countAndSay(int n) {
         var result = "1";

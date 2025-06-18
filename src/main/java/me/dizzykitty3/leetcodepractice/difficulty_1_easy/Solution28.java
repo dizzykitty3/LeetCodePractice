@@ -4,7 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// 28. Find the Index of the First Occurrence in a String
+/**
+ * 28 Find the Index of the First Occurrence in a String
+ * <li>Two Pointers</li>
+ * <li>String</li>
+ * <li>String Matching</li>
+ */
 public class Solution28 {
     public int strStr(String haystack, String needle) {
         if ("".equals(haystack) || "".equals(needle)) return -1;

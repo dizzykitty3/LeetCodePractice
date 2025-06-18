@@ -4,7 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// 66. Plus One
+/**
+ * 66 Plus One
+ * <li>Array</li>
+ * <li>Math</li>
+ */
 public class Solution66 {
     public int[] plusOne(int[] digits) {
         var length = digits.length;
