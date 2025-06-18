@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * 136 Single Number
+ * <li>Array</li>
+ * <li>Bit Manipulation</li>
  */
 public class Solution136 {
     public int singleNumber(int[] nums) {
