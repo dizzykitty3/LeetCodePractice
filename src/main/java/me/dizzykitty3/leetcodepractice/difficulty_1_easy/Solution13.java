@@ -42,11 +42,11 @@ public class Solution13 {
 
     @Test
     void testRomanToInt() {
-        assertEquals(romanToInt("III"), 3);
-        assertEquals(romanToInt("LVIII"), 58);
-        assertEquals(romanToInt("MCMXCIV"), 1994);
-        assertEquals(romanToInt("I"), 1);
-        assertEquals(romanToInt("VI"), 6);
-        assertEquals(romanToInt("XIII"), 13);
+        assertEquals(3, romanToInt("III"));
+        assertEquals(58, romanToInt("LVIII"));
+        assertEquals(1994, romanToInt("MCMXCIV"));
+        assertEquals(1, romanToInt("I"));
+        assertEquals(6, romanToInt("VI"));
+        assertEquals(13, romanToInt("XIII"));
     }
 }

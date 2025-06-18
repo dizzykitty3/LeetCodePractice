@@ -31,14 +31,14 @@ public class Solution2144 {
 
     @Test
     void testMinimumCost() {
-        assertEquals(minimumCost(new int[]{1, 2, 3}), 5);
-        assertEquals(minimumCost(new int[]{6, 5, 7, 9, 2, 2}), 23);
-        assertEquals(minimumCost(new int[]{5, 5}), 10);
-        assertEquals(minimumCost(new int[]{}), 0);
-        assertEquals(minimumCost(new int[]{0}), 0);
-        assertEquals(minimumCost(new int[]{1, 2}), 3);
-        assertEquals(minimumCost(new int[]{1, 2, 3, 4}), 8);
-        assertEquals(minimumCost(new int[]{1, 2, 3, 4, 5}), 12);
-        assertEquals(minimumCost(new int[]{1, 2, 3, 4, 5, 6}), 16);
+        assertEquals(5, minimumCost(new int[]{1, 2, 3}));
+        assertEquals(23, minimumCost(new int[]{6, 5, 7, 9, 2, 2}));
+        assertEquals(10, minimumCost(new int[]{5, 5}));
+        assertEquals(0, minimumCost(new int[]{}));
+        assertEquals(0, minimumCost(new int[]{0}));
+        assertEquals(3, minimumCost(new int[]{1, 2}));
+        assertEquals(8, minimumCost(new int[]{1, 2, 3, 4}));
+        assertEquals(12, minimumCost(new int[]{1, 2, 3, 4, 5}));
+        assertEquals(16, minimumCost(new int[]{1, 2, 3, 4, 5, 6}));
     }
 }

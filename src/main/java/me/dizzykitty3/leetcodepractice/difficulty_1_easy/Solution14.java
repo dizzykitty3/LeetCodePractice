@@ -49,8 +49,8 @@ public class Solution14 {
 
     @Test
     void testLongestCommonPrefix() {
-        assertEquals(longestCommonPrefix(new String[]{"flower", "flow", "flight"}), "fl");
-        assertEquals(longestCommonPrefix(new String[]{"dog", "racecar", "car"}), "");
-        assertEquals(longestCommonPrefix(new String[]{"dog", "door", "do"}), "do");
+        assertEquals("fl", longestCommonPrefix(new String[]{"flower", "flow", "flight"}));
+        assertEquals("", longestCommonPrefix(new String[]{"dog", "racecar", "car"}));
+        assertEquals("do", longestCommonPrefix(new String[]{"dog", "door", "do"}));
     }
 }

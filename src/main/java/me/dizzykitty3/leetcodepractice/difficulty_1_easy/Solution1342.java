@@ -36,10 +36,10 @@ public class Solution1342 {
 
     @Test
     void testNumberOfSteps() {
-        assertEquals(numberOfSteps(14), 6);
-        assertEquals(numberOfSteps(8), 4);
-        assertEquals(numberOfSteps(123), 12);
-        assertEquals(numberOfSteps(0), 0);
-        assertEquals(numberOfSteps(1), 1);
+        assertEquals(6, numberOfSteps(14));
+        assertEquals(4, numberOfSteps(8));
+        assertEquals(12, numberOfSteps(123));
+        assertEquals(0, numberOfSteps(0));
+        assertEquals(1, numberOfSteps(1));
     }
 }

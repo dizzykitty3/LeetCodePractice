@@ -24,19 +24,19 @@ public class Solution7 {
 
     @Test
     void testReverse() {
-        assertEquals(reverse(0), 0);
-        assertEquals(reverse(1), 1);
-        assertEquals(reverse(-1), -1);
-        assertEquals(reverse(123), 321);
-        assertEquals(reverse(-123), -321);
-        assertEquals(reverse(120), 21);
-        assertEquals(reverse(1_200), 21);
-        assertEquals(reverse(-1_200), -21);
-        assertEquals(reverse(-123_456), -654_321);
-        assertEquals(reverse(1_534_236_469), 0);
-        assertEquals(reverse(-1_534_236_469), 0);
-        assertEquals(reverse(-1_234_567_899), 0);
-        assertEquals(reverse(-2_147_483_412), -2_143_847_412);
-        assertEquals(reverse(-2_147_483_648), 0); // MIN_VALUE
+        assertEquals(0, reverse(0));
+        assertEquals(1, reverse(1));
+        assertEquals(-1, reverse(-1));
+        assertEquals(321, reverse(123));
+        assertEquals(-321, reverse(-123));
+        assertEquals(21, reverse(120));
+        assertEquals(21, reverse(1_200));
+        assertEquals(-21, reverse(-1_200));
+        assertEquals(-654_321, reverse(-123_456));
+        assertEquals(0, reverse(1_534_236_469));
+        assertEquals(0, reverse(-1_534_236_469));
+        assertEquals(0, reverse(-1_234_567_899));
+        assertEquals(-2_143_847_412, reverse(-2_147_483_412));
+        assertEquals(0, reverse(-2_147_483_648)); // MIN_VALUE
     }
 }

@@ -94,32 +94,32 @@ public class Solution38 {
 
     @Test
     void testRunLengthEncoding() {
-        assertEquals(runLengthEncoding("1"), "11");
-        assertEquals(runLengthEncoding("2"), "12");
-        assertEquals(runLengthEncoding("3"), "13");
-        assertEquals(runLengthEncoding("11"), "21");
-        assertEquals(runLengthEncoding("11111111"), "81");
-        assertEquals(runLengthEncoding("111111112"), "8112");
-        assertEquals(runLengthEncoding("21"), "1211");
-        assertEquals(runLengthEncoding("221"), "2211");
-        assertEquals(runLengthEncoding("3331"), "3311");
-        assertEquals(runLengthEncoding("1211"), "111221");
-        assertEquals(runLengthEncoding("22"), "22");
-        assertEquals(runLengthEncoding("33"), "23");
-        assertEquals(runLengthEncoding("333"), "33");
-        assertEquals(runLengthEncoding("111222333"), "313233");
-        assertEquals(runLengthEncoding("111221"), "312211");
+        assertEquals("11", runLengthEncoding("1"));
+        assertEquals("12", runLengthEncoding("2"));
+        assertEquals("13", runLengthEncoding("3"));
+        assertEquals("21", runLengthEncoding("11"));
+        assertEquals("81", runLengthEncoding("11111111"));
+        assertEquals("8112", runLengthEncoding("111111112"));
+        assertEquals("1211", runLengthEncoding("21"));
+        assertEquals("2211", runLengthEncoding("221"));
+        assertEquals("3311", runLengthEncoding("3331"));
+        assertEquals("111221", runLengthEncoding("1211"));
+        assertEquals("22", runLengthEncoding("22"));
+        assertEquals("23", runLengthEncoding("33"));
+        assertEquals("33", runLengthEncoding("333"));
+        assertEquals("313233", runLengthEncoding("111222333"));
+        assertEquals("312211", runLengthEncoding("111221"));
     }
 
     @Test
     void testCountAndSay() {
-        assertEquals(countAndSay(1), "1");
-        assertEquals(countAndSay(2), "11");
-        assertEquals(countAndSay(3), "21");
-        assertEquals(countAndSay(4), "1211");
-        assertEquals(countAndSay(5), "111221");
-        assertEquals(countAndSay(6), "312211");
-        assertEquals(countAndSay(7), "13112221");
-        assertEquals(countAndSay(8), "1113213211");
+        assertEquals("1", countAndSay(1));
+        assertEquals("11", countAndSay(2));
+        assertEquals("21", countAndSay(3));
+        assertEquals("1211", countAndSay(4));
+        assertEquals("111221", countAndSay(5));
+        assertEquals("312211", countAndSay(6));
+        assertEquals("13112221", countAndSay(7));
+        assertEquals("1113213211", countAndSay(8));
     }
 }

@@ -29,8 +29,8 @@ public class Solution3110 {
 
     @Test
     void testScoreOfString() {
-        assertEquals(scoreOfString("hello"), 13);
-        assertEquals(scoreOfString("zaz"), 50);
-        assertEquals(scoreOfString(""), 0);
+        assertEquals(13, scoreOfString("hello"));
+        assertEquals(50, scoreOfString("zaz"));
+        assertEquals(0, scoreOfString(""));
     }
 }

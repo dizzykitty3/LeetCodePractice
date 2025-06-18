@@ -19,14 +19,14 @@ public class Solution58 {
 
     @Test
     void testLengthOfLastWord() {
-        assertEquals(lengthOfLastWord("Hello World"), 5);
-        assertEquals(lengthOfLastWord("   fly me   to   the moon  "), 4);
-        assertEquals(lengthOfLastWord("luffy is still joyboy"), 6);
-        assertEquals(lengthOfLastWord(""), 0);
-        assertEquals(lengthOfLastWord("leetcode practice"), 8);
-        assertEquals(lengthOfLastWord("solution test java"), 4);
-        assertEquals(lengthOfLastWord(" java"), 4);
-        assertEquals(lengthOfLastWord("                         java"), 4);
-        assertEquals(lengthOfLastWord("                         java          "), 4);
+        assertEquals(5, lengthOfLastWord("Hello World"));
+        assertEquals(4, lengthOfLastWord("   fly me   to   the moon  "));
+        assertEquals(6, lengthOfLastWord("luffy is still joyboy"));
+        assertEquals(0, lengthOfLastWord(""));
+        assertEquals(8, lengthOfLastWord("leetcode practice"));
+        assertEquals(4, lengthOfLastWord("solution test java"));
+        assertEquals(4, lengthOfLastWord(" java"));
+        assertEquals(4, lengthOfLastWord("                         java"));
+        assertEquals(4, lengthOfLastWord("                         java          "));
     }
 }

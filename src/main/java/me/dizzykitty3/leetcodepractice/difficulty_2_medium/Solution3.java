@@ -52,14 +52,14 @@ public class Solution3 {
 
     @Test
     void testLengthOfLongestSubstring() {
-        assertEquals(lengthOfLongestSubstring(""), 0); // ""
-        assertEquals(lengthOfLongestSubstring("aaa"), 1); // "a"
-        assertEquals(lengthOfLongestSubstring("abcabcbb"), 3); // "abc"
-        assertEquals(lengthOfLongestSubstring("bbbbb"), 1); // "b"
-        assertEquals(lengthOfLongestSubstring("pwwkew"), 3); // "wke"
-        assertEquals(lengthOfLongestSubstring("adbshell"), 7); // "adbshel"
-        assertEquals(lengthOfLongestSubstring("google"), 4); // "ogle"
-        assertEquals(lengthOfLongestSubstring("java"), 3); // "jav"
-        assertEquals(lengthOfLongestSubstring("abcdefg"), 7); // "abcdefg"
+        assertEquals(0, lengthOfLongestSubstring("")); // ""
+        assertEquals(1, lengthOfLongestSubstring("aaa")); // "a"
+        assertEquals(3, lengthOfLongestSubstring("abcabcbb")); // "abc"
+        assertEquals(1, lengthOfLongestSubstring("bbbbb")); // "b"
+        assertEquals(3, lengthOfLongestSubstring("pwwkew")); // "wke"
+        assertEquals(7, lengthOfLongestSubstring("adbshell")); // "adbshel"
+        assertEquals(4, lengthOfLongestSubstring("google")); // "ogle"
+        assertEquals(3, lengthOfLongestSubstring("java")); // "jav"
+        assertEquals(7, lengthOfLongestSubstring("abcdefg")); // "abcdefg"
     }
 }

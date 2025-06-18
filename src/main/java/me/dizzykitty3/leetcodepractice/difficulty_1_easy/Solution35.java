@@ -23,10 +23,10 @@ public class Solution35 {
 
     @Test
     void testSearchInsert() {
-        assertEquals(searchInsert(new int[]{1, 3, 5, 6}, 2), 1);
-        assertEquals(searchInsert(new int[]{1, 3, 5, 6}, 5), 2);
-        assertEquals(searchInsert(new int[]{1, 3, 5, 6}, 7), 4);
-        assertEquals(searchInsert(new int[]{}, 7), 0);
-        assertEquals(searchInsert(new int[]{1, 3, 5, 6}, 0), 0);
+        assertEquals(1, searchInsert(new int[]{1, 3, 5, 6}, 2));
+        assertEquals(2, searchInsert(new int[]{1, 3, 5, 6}, 5));
+        assertEquals(4, searchInsert(new int[]{1, 3, 5, 6}, 7));
+        assertEquals(0, searchInsert(new int[]{}, 7));
+        assertEquals(0, searchInsert(new int[]{1, 3, 5, 6}, 0));
     }
 }

@@ -42,16 +42,16 @@ public class Solution4 {
 
     @Test
     void testFindMedianSortedArrays() {
-        assertEquals(findMedianSortedArrays(new int[]{1}, new int[]{1}), 1D);
-        assertEquals(findMedianSortedArrays(new int[]{0}, new int[]{0}), 0D);
-        assertEquals(findMedianSortedArrays(new int[]{-1}, new int[]{-1}), -1D);
-        assertEquals(findMedianSortedArrays(new int[]{-1}, new int[]{1}), 0D);
-        assertEquals(findMedianSortedArrays(new int[]{1}, new int[]{3}), 2D);
-        assertEquals(findMedianSortedArrays(new int[]{1}, new int[]{2}), 1.5D);
-        assertEquals(findMedianSortedArrays(new int[]{}, new int[]{2}), 2D);
-        assertEquals(findMedianSortedArrays(new int[]{}, new int[]{-1}), -1D);
-        assertEquals(findMedianSortedArrays(new int[]{2}, new int[]{}), 2D);
-        assertEquals(findMedianSortedArrays(new int[]{-1}, new int[]{}), -1D);
+        assertEquals(1D, findMedianSortedArrays(new int[]{1}, new int[]{1}));
+        assertEquals(0D, findMedianSortedArrays(new int[]{0}, new int[]{0}));
+        assertEquals(-1D, findMedianSortedArrays(new int[]{-1}, new int[]{-1}));
+        assertEquals(0D, findMedianSortedArrays(new int[]{-1}, new int[]{1}));
+        assertEquals(2D, findMedianSortedArrays(new int[]{1}, new int[]{3}));
+        assertEquals(1.5D, findMedianSortedArrays(new int[]{1}, new int[]{2}));
+        assertEquals(2D, findMedianSortedArrays(new int[]{}, new int[]{2}));
+        assertEquals(-1D, findMedianSortedArrays(new int[]{}, new int[]{-1}));
+        assertEquals(2D, findMedianSortedArrays(new int[]{2}, new int[]{}));
+        assertEquals(-1D, findMedianSortedArrays(new int[]{-1}, new int[]{}));
     }
 
     @Test

@@ -24,12 +24,12 @@ public class Solution28 {
 
     @Test
     void testStrStr() {
-        assertEquals(strStr("sadbutsad", "sad"), 0);
-        assertEquals(strStr("leetcode", "leeto"), -1);
-        assertEquals(strStr("leetcode", "leetcode"), 0);
-        assertEquals(strStr("a", "ab"), -1);
-        assertEquals(strStr("acadab", "ab"), 4);
-        assertEquals(strStr("123", "123"), 0);
-        assertEquals(strStr("456123", "123"), 3);
+        assertEquals(0, strStr("sadbutsad", "sad"));
+        assertEquals(-1, strStr("leetcode", "leeto"));
+        assertEquals(0, strStr("leetcode", "leetcode"));
+        assertEquals(-1, strStr("a", "ab"));
+        assertEquals(4, strStr("acadab", "ab"));
+        assertEquals(0, strStr("123", "123"));
+        assertEquals(3, strStr("456123", "123"));
     }
 }
