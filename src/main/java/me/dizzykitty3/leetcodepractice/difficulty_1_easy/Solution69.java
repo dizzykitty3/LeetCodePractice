@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * 69 Sqrt(x)
+ * <li>Math</li>
+ * <li>Binary Search</li>
  */
 public class Solution69 {
     public int mySqrt(int x) {
