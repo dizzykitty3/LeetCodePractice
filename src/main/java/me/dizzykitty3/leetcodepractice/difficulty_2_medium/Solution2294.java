@@ -9,6 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * 2294 Partition Array Such That Maximum Difference Is K
+ * <li>Array</li>
+ * <li>Greedy</li>
+ * <li>Sorting</li>
  */
 public class Solution2294 {
     public int partitionArray(int[] nums, int k) {
