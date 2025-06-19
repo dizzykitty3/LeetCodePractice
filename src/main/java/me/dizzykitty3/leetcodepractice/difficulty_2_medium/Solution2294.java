@@ -29,5 +29,10 @@ public class Solution2294 {
         assertEquals(2, partitionArray(new int[]{3, 6, 1, 2, 5}, 2));
         assertEquals(2, partitionArray(new int[]{1, 2, 3}, 1));
         assertEquals(3, partitionArray(new int[]{2, 2, 4, 5}, 0));
+        assertEquals(2, partitionArray(new int[]{2, 2, 4, 5}, 1));
+        assertEquals(2, partitionArray(new int[]{2, 2, 4, 5}, 2));
+        assertEquals(1, partitionArray(new int[]{2, 2, 4, 5}, 3));
+        assertEquals(4, partitionArray(new int[]{0, 5, 10, 15}, 4));
+        assertEquals(2, partitionArray(new int[]{0, 5, 10, 15}, 5));
     }
 }
