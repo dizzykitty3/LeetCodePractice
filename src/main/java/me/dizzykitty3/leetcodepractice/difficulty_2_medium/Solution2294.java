@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Solution2294 {
     public int partitionArray(int[] nums, int k) {
         List<Integer> list = Arrays.stream(nums).boxed().sorted().toList();
-        var result = 0;
+        var result = 1;
         var tmp = list.get(0);
         for (int i = 1; i < list.size(); i++) {
             if (list.get(i) - tmp > k) {
