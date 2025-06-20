@@ -9,19 +9,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class Solution70 {
     public int climbStairs(int n) {
-        // TODO
-//        var k = n / 2;
-//        if (isOddNumber(n)) {
-//            // 1 + C(k + (k - 1 + 1), (k - (k - 1))) + ... + C((k + 2), (k - 1)) + C((k + 1), k)
-//        } else {
-//            // 1 + C((k + (k - 1)), (k - (k - 1))) + ... + C((k + 2), (k - 2)) + C((k + 1), (k - 1)) + 1
-//        }
-//        return _;
-        return switch (n) {
-            case 1 -> 1;
-            case 2 -> 2;
-            default -> climbStairs(n - 2) + climbStairs(n - 1);
-        };
+        var k = n / 2;
+        if (isOddNumber(n)) {
+            // 1 + C(k + ((k - 1) + 1), k - (k - 1)) + ... + C(k + 2, k - 1) + C(k + 1, k)
+            // 1 + for (int i = k - 1; i < 1; i++) { C(k + i, k - i) }
+            return
+        } else {
+            // 1 + C(k + (k - 1), k - (k - 1)) + ... + C(k + 2, k - 2) + C(k + 1, k - 1) + 1
+            // 2 + for (int i = k - 1; i < 2; i++) { C(k + i, k - i) }
+            return
+        }
     }
 
     private boolean isOddNumber(int num) {
