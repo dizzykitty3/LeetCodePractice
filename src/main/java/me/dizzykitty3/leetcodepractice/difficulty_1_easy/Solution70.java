@@ -8,21 +8,70 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * 70 Climbing Stairs
  */
 public class Solution70 {
+    // TODO
     public int climbStairs(int n) {
+        if (n == 1) return 1;
+        if (n == 2) return 2;
+
         var k = n / 2;
+        int result;
         if (isOddNumber(n)) {
             // 1 + C(k + ((k - 1) + 1), k - (k - 1)) + ... + C(k + 2, k - 1) + C(k + 1, k)
             // 1 + for (int i = k - 1; i < 1; i++) { C(k + i, k - i) }
-            return
+            result = 1;
+            for (var i = k - 1; i < 1; i++) {
+                result += combination(k + i, k - i);
+            }
         } else {
             // 1 + C(k + (k - 1), k - (k - 1)) + ... + C(k + 2, k - 2) + C(k + 1, k - 1) + 1
             // 2 + for (int i = k - 1; i < 2; i++) { C(k + i, k - i) }
-            return
+            result = 2;
+            for (var i = k - 1; i < 2; i++) {
+                result += combination(k + i, k - i);
+            }
         }
+        return result;
     }
 
     private boolean isOddNumber(int num) {
         return Math.abs(num) % 2 == 1;
+    }
+
+    private int factorial(int num) {
+        var result = 1;
+        for (var i = 2; i < num + 1; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+    private int combination(int n, int k) {
+        if (k < 0 || k > n) {
+            return 0;
+        }
+        if (k == 0 || k == n) {
+            return 1;
+        }
+        return factorial(n) / (factorial(k) * factorial(n - k));
+    }
+
+    @Test
+    void testFactorial() {
+        assertEquals(1, factorial(1));
+        assertEquals(2, factorial(2));
+        assertEquals(6, factorial(3));
+        assertEquals(24, factorial(4));
+        assertEquals(120, factorial(5));
+        assertEquals(720, factorial(6));
+    }
+
+    @Test
+    void testCombination() {
+        assertEquals(6, combination(4, 2));
+        assertEquals(10, combination(5, 2));
+        assertEquals(1, combination(1, 1));
+        assertEquals(2, combination(2, 1));
+        assertEquals(1, combination(2, 2));
     }
 
     @Test
