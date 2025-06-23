@@ -13,7 +13,7 @@ public class Solution70 {
         if (n == 2) return 2;
 
         var k = n / 2;
-        int result;
+        long result;
         if (isOddNumber(n)) {
             // 3 -> k = 1
             //      111
@@ -54,14 +54,15 @@ public class Solution70 {
                 result += combination(k + i, k - i);
             }
         }
-        return result;
+        return Integer.parseInt(String.valueOf(result));
     }
 
     private boolean isOddNumber(int num) {
         return Math.abs(num) % 2 == 1;
     }
 
-    private int factorial(int num) {
+    // The number is too big for even a long type variable
+    private long factorial(int num) {
         var result = 1;
         for (var i = 2; i < num + 1; i++) {
             result *= i;
@@ -69,7 +70,7 @@ public class Solution70 {
         return result;
     }
 
-    private int combination(int n, int k) {
+    private long combination(int n, int k) {
         if (k < 0 || k > n) {
             return 0;
         }
@@ -87,6 +88,11 @@ public class Solution70 {
         assertEquals(24, factorial(4));
         assertEquals(120, factorial(5));
         assertEquals(720, factorial(6));
+        assertEquals(5040, factorial(7));
+        assertEquals(40320, factorial(8));
+        assertEquals(362880, factorial(9));
+        assertEquals(3628800, factorial(10));
+        assertEquals(39916800, factorial(11));
     }
 
     @Test
@@ -125,5 +131,6 @@ public class Solution70 {
         // 22111, 21211, 21121, 21112, 12211, 12121, 12112, 11221, 11212, 11122
         // 2221, 2122, 2212, 1222
         assertEquals(21, climbStairs(7));
+        assertEquals(14930352, climbStairs(35));
     }
 }
