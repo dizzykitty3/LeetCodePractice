@@ -8,6 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * 2 Add Two Numbers
+ * <li>Linked List</li>
+ * <li>Math</li>
+ * <li>Recursion</li>
  */
 public class Solution2 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
