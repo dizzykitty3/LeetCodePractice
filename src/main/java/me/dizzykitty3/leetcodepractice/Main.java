@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hi!");
         System.out.println("CLICK THE LINK TO START: 👇");
-        System.out.println("https://leetcode.com/problemset/all/");
+        System.out.println("https://leetcode.com/problemset/");
     }
 
     // Note:
