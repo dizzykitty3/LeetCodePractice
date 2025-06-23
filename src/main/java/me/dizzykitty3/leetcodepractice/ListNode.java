@@ -3,7 +3,6 @@ package me.dizzykitty3.leetcodepractice;
 /**
  * Definition for singly-linked list.
  */
-@SuppressWarnings("unused")
 public class ListNode {
     int val;
     ListNode next;
