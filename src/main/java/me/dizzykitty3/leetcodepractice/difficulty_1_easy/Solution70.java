@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * 70 Climbing Stairs
  */
 public class Solution70 {
-    // TODO
     public int climbStairs(int n) {
         if (n == 1) return 1;
         if (n == 2) return 2;
@@ -16,17 +15,42 @@ public class Solution70 {
         var k = n / 2;
         int result;
         if (isOddNumber(n)) {
-            // 1 + C(k + ((k - 1) + 1), k - (k - 1)) + ... + C(k + 2, k - 1) + C(k + 1, k)
-            // 1 + for (int i = k - 1; i < 1; i++) { C(k + i, k - i) }
+            // 3 -> k = 1
+            //      111
+            //      21, 12
+            // 5 -> k = 2
+            //      11111
+            //      2111, 1211, 1121, 1112
+            //      221, 212, 122
+            // 7 -> k = 3
+            //      1111111
+            //      211111, 121111, 112111, 111211, 111121, 111112
+            //      22111, 21211, 21121, 21112, 12211, 12121, 12112, 11221, 11212, 11122
+            //      2221, 2122, 2212, 1222
+
+            // 1 + C(k + (k - 1) + 1, k - (k - 1)) + ... + C(k + 1 + 1, k - 1) + C(k + 1, k)
+            // 1 + for (int i = k - 1; i >= 0; i--) { C(k + i + 1, k - i) }
+
             result = 1;
-            for (var i = k - 1; i < 1; i++) {
-                result += combination(k + i, k - i);
+            for (var i = k - 1; i >= 0; i--) {
+                result += combination(k + i + 1, k - i);
             }
         } else {
+            // 4 -> k = 2
+            //      1111
+            //      211, 121, 112
+            //      22
+            // 6 -> k = 3
+            //      111111
+            //      21111, 12111, 11211, 11121, 11112
+            //      2211, 2121, 2112, 1221, 1212, 1122
+            //      222
+
             // 1 + C(k + (k - 1), k - (k - 1)) + ... + C(k + 2, k - 2) + C(k + 1, k - 1) + 1
-            // 2 + for (int i = k - 1; i < 2; i++) { C(k + i, k - i) }
+            // 2 + for (int i = k - 1; i >= 1; i--) { C(k + i, k - i) }
+
             result = 2;
-            for (var i = k - 1; i < 2; i++) {
+            for (var i = k - 1; i >= 1; i--) {
                 result += combination(k + i, k - i);
             }
         }
@@ -72,14 +96,13 @@ public class Solution70 {
         assertEquals(1, combination(1, 1));
         assertEquals(2, combination(2, 1));
         assertEquals(1, combination(2, 2));
+        assertEquals(10, combination(5, 3));
+        assertEquals(15, combination(6, 2));
     }
 
     @Test
     void testClimbStairs() {
-        // 1
         assertEquals(1, climbStairs(1));
-        // 11
-        // 2
         assertEquals(2, climbStairs(2));
         // 111
         // 21, 12
