@@ -6,6 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * 70 Climbing Stairs
+ * <li>Math</li>
+ * <li>Dynamic Programming</li>
+ * <li>Memorization</li>
  */
 public class Solution70 {
     public int climbStairs(int n) {
