@@ -13,8 +13,8 @@ public class Solution2 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode result;
         var needPlusOne = false;
-        if (l1.val + l2.val == 10) {
-            result = new ListNode(0);
+        if (l1.val + l2.val >= 10) {
+            result = new ListNode(l1.val + l2.val - 10);
             needPlusOne = true;
         } else {
             result = new ListNode(l1.val + l2.val);
@@ -43,8 +43,10 @@ public class Solution2 {
                 }
                 l2 = l2.next;
             } else {
-                if ((l1.next.val + l2.next.val == 9 && needPlusOne) || (l1.next.val + l2.next.val == 10)) {
-                    temp.next = new ListNode(0);
+                if (l1.next.val + l2.next.val >= 9 && needPlusOne) {
+                    temp.next = new ListNode(l1.next.val + l2.next.val + 1 - 10);
+                } else if (l1.next.val + l2.next.val >= 10) {
+                    temp.next = new ListNode(l1.next.val + l2.next.val - 10);
                     needPlusOne = true;
                 } else if (needPlusOne) {
                     temp.next = new ListNode(l1.next.val + l2.next.val + 1);
@@ -80,5 +82,7 @@ public class Solution2 {
         assertArrayEquals(toArray(new ListNode(new int[]{0, 1})), toArray(addTwoNumbers(new ListNode(new int[]{4}), new ListNode(new int[]{6}))));
         assertArrayEquals(toArray(new ListNode(new int[]{0, 1, 0, 1})), toArray(addTwoNumbers(new ListNode(new int[]{1, 0, 1}), new ListNode(new int[]{9, 0, 9}))));
         assertArrayEquals(toArray(new ListNode(new int[]{8, 9, 9, 9, 0, 0, 0, 1})), toArray(addTwoNumbers(new ListNode(new int[]{9, 9, 9, 9, 9, 9, 9}), new ListNode(new int[]{9, 9, 9, 9}))));
+        assertArrayEquals(toArray(new ListNode(new int[]{0, 1})), toArray(addTwoNumbers(new ListNode(new int[]{2}), new ListNode(new int[]{8}))));
+        assertArrayEquals(toArray(new ListNode(new int[]{4, 5, 5, 1})), toArray(addTwoNumbers(new ListNode(new int[]{6, 6, 6}), new ListNode(new int[]{8, 8, 8}))));
     }
 }
