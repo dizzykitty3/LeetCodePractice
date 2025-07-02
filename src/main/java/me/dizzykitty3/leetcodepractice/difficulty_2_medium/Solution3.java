@@ -7,34 +7,30 @@ import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// TODO Time Limit Exceeded
-// 3. Longest Substring Without Repeating Characters
+/**
+ * 3 Longest Substring Without Repeating Characters
+ */
 public class Solution3 {
-    // Submit result: Time Limit Exceeded
     public int lengthOfLongestSubstring(String s) {
         if (Objects.isNull(s) || Objects.equals(s, "")) return 0;
-        final int length = s.length();
+        var length = s.length();
         if (length == 1) return 1;
 
-        int result = 1; // starts with 1
-        for (int i = 2; i <= length; i++) {
-            for (int i1 = 0; i1 + i <= length; i1++) {
-                final String subString = s.substring(i1, i1 + i);
-                final boolean isValid = hasDuplicateChars(subString);
-                if (!isValid) {
-                    result++;
-                    break; // don't need to check other substring with the same length
+        for (var i = length; i >= 1; i--) {
+            for (var i1 = 0; i1 + i <= length; i1++) {
+                var subString = s.substring(i1, i1 + i);
+                if (!hasDuplicateChars(subString)) {
+                    return i;
                 }
             }
         }
-        return result;
+        return 1;
     }
 
     private boolean hasDuplicateChars(String s) {
         if (s == null || s.length() <= 1) return false;
-
-        final HashSet<Character> set = new HashSet<>();
-        for (char c : s.toCharArray()) {
+        var set = new HashSet<>();
+        for (var c : s.toCharArray()) {
             if (!set.add(c)) return true;
         }
         return false;
@@ -53,6 +49,9 @@ public class Solution3 {
     @Test
     void testLengthOfLongestSubstring() {
         assertEquals(0, lengthOfLongestSubstring("")); // ""
+        assertEquals(1, lengthOfLongestSubstring("a")); // "a"
+        assertEquals(1, lengthOfLongestSubstring("aa")); // "a"
+        assertEquals(1, lengthOfLongestSubstring("aaaa")); // "a"
         assertEquals(1, lengthOfLongestSubstring("aaa")); // "a"
         assertEquals(3, lengthOfLongestSubstring("abcabcbb")); // "abc"
         assertEquals(1, lengthOfLongestSubstring("bbbbb")); // "b"
@@ -61,5 +60,7 @@ public class Solution3 {
         assertEquals(4, lengthOfLongestSubstring("google")); // "ogle"
         assertEquals(3, lengthOfLongestSubstring("java")); // "jav"
         assertEquals(7, lengthOfLongestSubstring("abcdefg")); // "abcdefg"
+        assertEquals(26, lengthOfLongestSubstring("abcdefghijklmnopqrstuvwxyz")); // "abcdefghijklmnopqrstuvwxyz"
+        assertEquals(26, lengthOfLongestSubstring("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz")); // "abcdefghijklmnopqrstuvwxyz"
     }
 }
